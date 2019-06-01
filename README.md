@@ -1,2 +1,2 @@
 # Solar-System
-Project for Software Ingeniring Class
+Project for Software Ingeneering Class
