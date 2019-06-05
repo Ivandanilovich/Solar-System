@@ -27,9 +27,10 @@ public class Main : MonoBehaviour
         }
     }
 
-
+    float t = 0;
     void Update()
     {
-
+        t = 0.1f;
+        planets["Jupiter"].obj.transform.position = (planets["Jupiter"].PRotate(t));
     }
 }
