@@ -30,7 +30,13 @@ public class Main : MonoBehaviour
     float t = 0;
     void Update()
     {
-        t = 0.1f;
-        planets["Jupiter"].obj.transform.position = (planets["Jupiter"].PRotate(t));
+        t = 0.01f;
+        //foreach(var p in planets.Values)
+        //{
+        //    p.obj.transform.position = p.PRotate(t);
+        //}
+        var p = planets["Jupiter"];
+        p.obj.transform.position = p.PRotate(t);
+
     }
 }
