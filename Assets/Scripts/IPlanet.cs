@@ -2,7 +2,7 @@
 
 interface IPlanet
 {
-    void PRotate();
-    void AxisRotate();
+    Vector3 PRotate(float ti);
+    Vector3 AxisRotate();
     Vector3 StartPosition();
 }
