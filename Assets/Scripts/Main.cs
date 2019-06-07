@@ -31,12 +31,9 @@ public class Main : MonoBehaviour
     void Update()
     {
         t = 0.01f;
-        //foreach(var p in planets.Values)
-        //{
-        //    p.obj.transform.position = p.PRotate(t);
-        //}
-        var p = planets["Jupiter"];
-        p.obj.transform.position = p.PRotate(t);
-
+        foreach (var p in planets.Values)
+        {
+            p.obj.transform.position = p.PRotate(t);
+        }
     }
 }
