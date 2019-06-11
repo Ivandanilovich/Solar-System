@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
-    class Stuff
+    public static class Stuff
     {
-        Dictionary<string, string> mercury = new Dictionary<string, string>()
+        public static Dictionary<string, string> mercury = new Dictionary<string, string>()
         {
                     {"namerus", "Меркурий" },
                     {"dist", "0,4 а.е." },
