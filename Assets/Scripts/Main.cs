@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Main : MonoBehaviour
 {
     public GameObject[] planetObj;
+
+    
 
     private Dictionary<string, MyPlanet> planets;
 
@@ -25,6 +28,8 @@ public class Main : MonoBehaviour
         {
             p.obj.transform.position = p.StartPosition();
         }
+
+
     }
 
     float t = 0;
