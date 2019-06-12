@@ -1,14 +1,9 @@
-﻿using Assets.Scripts;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Main : MonoBehaviour
 {
     public GameObject[] planetObj;
-
-    
-
     private Dictionary<string, MyPlanet> planets;
 
     void Start()
@@ -23,28 +18,19 @@ public class Main : MonoBehaviour
             {"Uranus",      new MyPlanet(){obj = planetObj[5], dayC = 42}},
             {"Neptune",     new MyPlanet(){obj = planetObj[6], dayC = 18}}
         };
-
         foreach (var p in planets.Values)
         {
             p.obj.transform.position = p.StartPosition();
         }
-
-
     }
 
-    float t = 0;
+    float t = 0.01f;
     void Update()
     {
-        t = 0.01f;
         foreach (var p in planets.Values)
         {
             p.obj.transform.position = p.PRotate(t);
             p.obj.transform.eulerAngles = p.AxisRotate();
         }
-        //var p = planets["Earth"];
-        //p.obj.transform.position = p.PRotate(t);
-        //var v = p.AxisRotate();
-        //print(v.y);
-        //p.obj.transform.eulerAngles = v;
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,7 +48,6 @@ public class CanvasController : MonoBehaviour
                 v = Stuff.earth;
                 break;
         }
-
         planetName.text = v["namerus"];
         text1.text = v["dist"];
         text2.text = v["weight"];
