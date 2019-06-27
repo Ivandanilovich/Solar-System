@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,50 +11,26 @@ public class CanvasController : MonoBehaviour
     public Text planetName;
     public Dropdown dropdown;
 
-    priva
+    private PlanetsStuff[] planetsInfo;
 
     void Start()
     {
         showInfo();
         Hide();
+
+        var jsonTextFile = Resources.Load<TextAsset>("planets.json");
+
+        planetsInfo = JsonConvert.DeserializeObject<List<PlanetsStuff>>(jsonTextFile.text).ToArray();
     }
 
     public void showInfo()
     {
         var id = dropdown.GetComponent<Dropdown>().value;
         canvas.gameObject.SetActive(true);
-        Dictionary<string, string> v;
-        switch (id)
-        {
-            case 0:
-                v = Stuff.mercury;
-                break;
-            case 1:
-                v = Stuff.venus;
-                break;
-            case 2:
-                v = Stuff.earth;
-                break;
-            case 3:
-                v = Stuff.mars;
-                break;
-            case 4:
-                v = Stuff.jupiter;
-                break;
-            case 5:
-                v = Stuff.uranus;
-                break;
-            case 6:
-                v = Stuff.neptune;
-                break;
-            default:
-                v = Stuff.earth;
-                break;
-        }
-        planetName.text = v["namerus"];
-        text1.text = v["dist"];
-        text2.text = v["weight"];
-        text3.text = v["desc"];
+        planetName.text = planetsInfo[id].Namerus;
+        text1.text = planetsInfo[id].Dist;
+        text2.text = planetsInfo[id].Weight;
+        text3.text = planetsInfo[id].Desc;
     }
 
     public void Hide()
