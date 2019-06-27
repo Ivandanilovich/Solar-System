@@ -10,6 +10,8 @@ public class CanvasController : MonoBehaviour
     public Text planetName;
     public Dropdown dropdown;
 
+    priva
+
     void Start()
     {
         showInfo();
